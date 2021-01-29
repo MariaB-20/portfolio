@@ -13,7 +13,7 @@ html,
 body {
     height: 100%;
     color: #000000;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .large-pad {
@@ -93,80 +93,65 @@ body {
 
 .content-wrapper {
     height: 100vh;
-    /* cursor: url("assets/cursor.png"), auto; */
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+.content-wrapper .container-fluid .row {
+    height: 100%;
 }
 
 #marb-logo {
     max-width: 200px;
     height: auto;
+    position: relative;
+    z-index: 99;
 }
 
-.navbar {
-    align-items: start;
-}
-
-.navbar-nav {
+.nav-ul {
     display: block;
 }
 
-.nav-wrapper {
-    width: 100%;
-    align-items: start;
-}
-
-/* .navbar-brand {
-    z-index: 1000;
-} */
-
-.navbar-nav a {
+.nav-ul a {
     font-size: 40px;
     color: black;
     font-weight: 800;
-    line-height: 40px;
+    line-height: 45px;
 }
 
-nav.navbar.navbar-expand-xl.navbar-custom {
-    justify-content: flex-end;
-}
-
-div#collapse-target {
-    justify-content: flex-end;
-    align-items: start;
-}
-
-.menu-arrow {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.nav-link {
-    transition: all 0.5 ease;
-}
-
-.nav-link::before {
+.nav-li::before {
     content: url("assets/arrow_icon.png");
     width: auto;
     height: auto;
     position: absolute;
     top: 0;
-    right: 300px;
+    left: -300px;
     display: none;
     transition: all 0.5 ease;
 }
 
-.nav-link:hover:before {
+.nav-li:hover:before {
     display: block;
 }
 
-.nav-link:hover {
+.nav-li:hover a {
     color: white;
+    text-decoration: none;
+}
+
+#menu {
+    position: relative;
+    z-index: 99;
 }
 
 #social {
-    background-color: #5D9F23;
     height: 100%;
-    padding-top: 7.5px;
+    padding-top: 15px;
+    position: relative;
+    z-index: 99;
 }
 
 #social hr {
@@ -181,10 +166,23 @@ div#collapse-target {
     font-weight: 800;
 }
 
+#nav-logo-social, #menu {
+    pointer-events: none;
+}
+
+#marb-logo, .social-link, .nav-a {
+    pointer-events: all;
+}
+
+#social a:hover {
+    text-decoration: none;
+    color: white;
+}
+
 #ball {
     position: absolute;
-    top: 55vh;
-    left: -30px;  
+    bottom: -60px;
+    left: -40px;  
 }
 
 #ball img.animation-bounce {
@@ -211,15 +209,51 @@ div#collapse-target {
 }
 
 @keyframes run {
-    0%   { transform: scale(1,1)      translate(0, 0); }
-    12%  { transform: scale(1.05,.85) translate(60%, -170%); }
-    24% { transform: scale(1.1)       translate(120%, 0); }
-    36% { transform: scale(1.05,.85)  translate(170%, -170%); }
-    48% { transform: scale(1.1)       translate(230%, 0); }
-    60% { transform: scale(1.05,.85)  translate(170%, -170%); }
-    72% { transform: scale(1.1)       translate(120%, 0); }
-    84%  { transform: scale(1.05,.85) translate(60%, -170%); }
-    100%   { transform: scale(1,1)    translate(0, 0); }
+    0%   { 
+        transform: scale(1,1);
+        bottom: -60px;
+        left: -40px; 
+    }
+    12%  { 
+        transform: scale(1.05,.85);
+        bottom: 80vh;
+        left: 40vw; 
+    }
+    24% { 
+        transform: scale(1.1);
+        bottom: -60px;
+        left: 80vw;
+    }
+    36% { 
+        transform: scale(1.05,.85);
+        bottom: 80vh;
+        left: 100vw;
+    }
+    48% { 
+        transform: scale(1.1);
+        bottom: -60px;
+        left: 90vw;
+    }
+    60% {
+        transform: scale(1.05,.85); 
+        bottom: 80vh;
+        left: 60vw;
+    }
+    72% { 
+        transform: scale(1.1);
+        bottom: -60px;
+        left: 50vw;
+    }
+    84%  { 
+        transform: scale(1.05,.85);
+        bottom: 80vh;
+        left: 25vw;
+    }
+    100%   { 
+        transform: scale(1,1);
+        bottom: -60px;
+        left: -40px;
+    }
 }
 
 .hello-wrapper h1, .hello-wrapper h2, .hello-wrapper h2 span {
@@ -237,24 +271,56 @@ div#collapse-target {
     cursor: url("assets/icon_love.png"), auto;
 }
 
-.hello-wrapper {
-    margin-top: 100px;
+#ball-img:hover {
+    cursor: url("assets/click_arrow_pink.png"), auto;
 }
 
+@media (max-width: 991px) {
+    .row.nav-wrapper {
+        height: 100vh;
+    }
+    ul.navbar-nav {
+        align-items: right;
+    }
+    .nav-item {
+        text-align: right;
+    }
+    .nav-link {
+        padding-right: 0;
+    }
+    #ball img {
+        width: 300px;
+        height: auto;
+    }
+}
 
-#ball-img:hover {
-    cursor: url('assets/click_arrow.png'), auto;
+@media (min-width: 991px) {
+    #social {
+        height: 100%;
+        padding-top: 5px;
+        margin-left: 5vw;
+    }
 }
 
 @media (min-width: 1199px) {
-    .nav-link::before {
+    .nav-li::before {
         content: url("assets/arrow_icon_short.png");
+        left: -150px;
+    }
+}
+
+@media (min-width: 1500px) {
+    #social {
+        margin-left: 15vw;
     }
 }
 
 @media (min-width: 1700px) {
-    .nav-link::before {
+    .nav-li::before {
         content: url("assets/arrow_icon.png");
+        left: -300px;
     }
 }
+
+
 
