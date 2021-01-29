@@ -227,7 +227,7 @@ body {
     36% { 
         transform: scale(1.05,.85);
         bottom: 80vh;
-        left: 100vw;
+        left: calc(100vw - 400px);
     }
     48% { 
         transform: scale(1.1);
@@ -256,23 +256,31 @@ body {
     }
 }
 
-.hello-wrapper h1, .hello-wrapper h2, .hello-wrapper h2 span {
-    font-size: 70px;
+#hello h1, #hello h2, #hello h2 span {
+    font-size: 4vw;
     font-weight: 800;
     color: black;
 }
 
-.hello-wrapper h2 span {
+#hello h2 span {
     color: white;
     display: inline-block;
+    pointer-events: all;
 }
 
-.hello-wrapper h2 span:hover {
+#hello h2 span:hover {
     cursor: url("assets/icon_love.png"), auto;
 }
 
+#hello {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    pointer-events: none;
+}
+
 #ball-img:hover {
-    cursor: url("assets/click_arrow_pink.png"), auto;
+    cursor: url("assets/click_arrow.png"), auto;
 }
 
 @media (max-width: 991px) {
@@ -291,6 +299,18 @@ body {
     #ball img {
         width: 300px;
         height: auto;
+    }
+    #hello {
+        top: 45px;
+    }
+    #hello h1, #hello h2, #hello h2 span {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    #hello {
+        display: none;
     }
 }
 
