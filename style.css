@@ -13,8 +13,12 @@ html,
 body {
     height: 100%;
     color: #000000;
-    overflow-y: hidden;
 }
+
+/* body {
+    overflow-y: auto;
+    overflow-x: hidden;
+} */
 
 .large-pad {
     padding-left: 5%;
@@ -86,21 +90,25 @@ body {
 
 body {
     background-color: #5D9F23;
-    background-image: url("assets/pattern_2.png");
-    background-position: center;
-    background-repeat: repeat;
 }
 
 .content-wrapper {
     height: 100vh;
-    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#page-2 {
+    height: 100vh;
+    width: 100%;
+    background-color: pink;
 }
 
 .container-fluid {
     height: 100%;
+
 }
 
-.content-wrapper .container-fluid .row {
+.content-wrapper .container-fluid .row-home {
     height: 100%;
 }
 
@@ -341,6 +349,134 @@ body {
         left: -300px;
     }
 }
+
+#home { 
+    background: url("assets/pattern_2.png") 50% 0 repeat fixed; min-height: 100vh; 
+    height: 100vh; 
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 1920px; 
+    position: relative; 
+}
+
+#home #article { 
+    height: auto; 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+}
+
+#works { 
+    background: tomato 50% 0 repeat fixed; min-height: 100vh; 
+    height: 100vh; 
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 1920px; 
+    position: relative;
+    -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+#works h2 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 120px;
+}
+
+#archi {
+    background-image: url("assets/archi.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#real-estate {
+    background-image: url("assets/real_estate.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#fun {
+    background-image: url("assets/fun.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#something {
+    background-image: url("assets/something.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title {
+    height: auto;
+}
+
+.worklist {
+    height: 70%;
+    padding-top: 60px;
+}
+
+.worklist-col {
+    height: 100%;
+    position: relative;
+}
+
+.worklist-col a {
+    position: absolute;
+    left: 90px;
+    bottom: 0;
+}
+
+.worklist-col p {
+    transform: rotate(-90deg);
+    font-weight: 800;
+    color: white;
+    font-size: 70px;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    transform-origin: 0% 100%;
+}
+
+.pages-links img {
+    max-width: 150px;
+}
+
+#home-btn::before {
+    content: "home";
+    font-size: 42px;
+    font-family: 'Oleo Script', cursive;
+    color: white;
+    position: absolute;
+    display: none;
+    left: 30%;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+#home-btn:hover::before {
+    display: block;
+}
+
+#contact-btn::before {
+    content: "contact";
+    font-size: 42px;
+    font-family: 'Oleo Script', cursive;
+    color: white;
+    position: absolute;
+    display: none;
+    left: 30%;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+#contact-btn:hover::before {
+    display: block;
+}
+
+
 
 
 
