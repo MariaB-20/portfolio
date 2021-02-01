@@ -1,7 +1,7 @@
 * {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-    color: black;
+    color: #000501;
 }
 
 ul {
@@ -89,27 +89,21 @@ body {
 }
 
 body {
-    background-color: #5D9F23;
+    background-color: #32B366;
 }
 
 .content-wrapper {
     height: 100vh;
-    overflow-y: hidden;
-}
-
-#page-2 {
-    height: 100vh;
-    width: 100%;
-    background-color: pink;
+    /* overflow-y: hidden; */
 }
 
 .container-fluid {
     height: 100%;
-
 }
 
 .content-wrapper .container-fluid .row-home {
     height: 100%;
+    white-space: wrap;
 }
 
 #marb-logo {
@@ -291,71 +285,12 @@ body {
     cursor: url("assets/click_arrow.png"), auto;
 }
 
-@media (max-width: 991px) {
-    .row.nav-wrapper {
-        height: 100vh;
-    }
-    ul.navbar-nav {
-        align-items: right;
-    }
-    .nav-item {
-        text-align: right;
-    }
-    .nav-link {
-        padding-right: 0;
-    }
-    #ball img {
-        width: 300px;
-        height: auto;
-    }
-    #hello {
-        top: 45px;
-    }
-    #hello h1, #hello h2, #hello h2 span {
-        font-size: 40px;
-    }
-}
-
-@media (max-width: 767px) {
-    #hello {
-        display: none;
-    }
-}
-
-@media (min-width: 991px) {
-    #social {
-        height: 100%;
-        padding-top: 5px;
-        margin-left: 5vw;
-    }
-}
-
-@media (min-width: 1199px) {
-    .nav-li::before {
-        content: url("assets/arrow_icon_short.png");
-        left: -150px;
-    }
-}
-
-@media (min-width: 1500px) {
-    #social {
-        margin-left: 15vw;
-    }
-}
-
-@media (min-width: 1700px) {
-    .nav-li::before {
-        content: url("assets/arrow_icon.png");
-        left: -300px;
-    }
-}
 
 #home { 
     background: url("assets/pattern_2.png") 50% 0 repeat fixed; min-height: 100vh; 
     height: 100vh; 
     margin: 0 auto; 
     width: 100%; 
-    max-width: 1920px; 
     position: relative; 
 }
 
@@ -366,20 +301,34 @@ body {
     width: 100%; 
 }
 
+#works #works-article {
+    height: auto; 
+    position: relative; 
+    top: 0; 
+    width: 100%; 
+}
+
 #works { 
     background: tomato 50% 0 repeat fixed; min-height: 100vh; 
-    height: 100vh; 
+    height: auto; 
     margin: 0 auto; 
     width: 100%; 
-    max-width: 1920px; 
     position: relative;
     -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
 
+.content-wrapper-works {
+    height: 100%;
+}
+
 #works h2 {
     font-family: 'Oleo Script', cursive;
     font-size: 120px;
+}
+
+#works .worklist {
+    padding-bottom: 30px;
 }
 
 #archi {
@@ -422,12 +371,7 @@ body {
 .worklist-col {
     height: 100%;
     position: relative;
-}
-
-.worklist-col a {
-    position: absolute;
-    left: 90px;
-    bottom: 0;
+    min-height: 515px;
 }
 
 .worklist-col p {
@@ -435,9 +379,11 @@ body {
     font-weight: 800;
     color: white;
     font-size: 70px;
-    transform: rotate(-90deg);
     white-space: nowrap;
     transform-origin: 0% 100%;
+    position: absolute;
+    left: 90px;
+    bottom: 0;
 }
 
 .pages-links img {
@@ -476,7 +422,95 @@ body {
     display: block;
 }
 
+#contact h2 {
+    font-family: 'Ultra', serif;
+    font-size: 90px;
+}
 
+#contact {
+    background: #E0CA3C 50% 0 repeat fixed; min-height: 100vh; 
+    height: auto; 
+    min-height: 100vh;
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative;
+    -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
 
+@media (max-width: 991px) {
+    .row.nav-wrapper {
+        height: 100vh;
+    }
+    ul.navbar-nav {
+        align-items: right;
+    }
+    .nav-item {
+        text-align: right;
+    }
+    .nav-link {
+        padding-right: 0;
+    }
+    #ball img {
+        width: 300px;
+        height: auto;
+    }
+    #hello {
+        top: 45px;
+    }
+    #hello h1, #hello h2, #hello h2 span {
+        font-size: 40px;
+    }
+    .pages-links a img {
+        max-width: 75px;
+    }
+    #works h2.works-title {
+        font-size: 13vw;
+    }
+    #home-btn::before, #contact-btn::before {
+        font-size: 24px;
+    }
+}
 
+@media (max-width: 767px) {
+    #hello {
+        display: none;
+    }
+}
 
+@media (max-width: 568px) {
+    .pages-links a img {
+        max-width: 50px;
+    }
+    #home-btn::before, #contact-btn::before {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    #social {
+        height: 100%;
+        padding-top: 5px;
+        margin-left: 5vw;
+    }
+}
+
+@media (min-width: 1199px) {
+    .nav-li::before {
+        content: url("assets/arrow_icon_short.png");
+        left: -150px;
+    }
+}
+
+@media (min-width: 1500px) {
+    #social {
+        margin-left: 15vw;
+    }
+}
+
+@media (min-width: 1700px) {
+    .nav-li::before {
+        content: url("assets/arrow_icon.png");
+        left: -300px;
+    }
+}
